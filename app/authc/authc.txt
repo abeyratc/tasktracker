@@ -1,0 +1,94 @@
+Guards
+------
+
+Gurds return value controls the routers behavior.
+
+	Guards				Navigation
+	Return value		process
+	----------------------------------
+		true 			continues
+	----------------------------------
+		false			stops
+						user stays put
+ 	----------------------------------
+
+Guard can tell router to navigate elsewhere effectively cancelling the current navigation.
+
+Routing Guard can return an Observable<boolean> or a Promise<boolean> and router will wait Observable<boolean> to resolve to true or false.
+
+Types of Guards the router supports
+-----------------------------------
+1) CanActivate - mediates to navigate to a route.
+
+2) CanActivateChild - mediates to navigate to a child route.
+
+3) CanDeactivate - mediates to navigate away from the current route.
+
+4) Resolve - perform route data retreival before route activation.
+
+5) CanLoad - mediate navigating to feature module loaded asynchronously.
+
+* can have multiple Guards of each level of routing hierarchy.
+
+* router checks CanDeactivate and CanActivateChild Guards first from deepest child to top and checks CanActivate form the top to deepest child node.
+
+* If the feature module is loaded asynchronously, the CanLoad Guards is checked before loading the module.
+
+* If any Guard returns false, the pending Guards that have not been completed will be cancelled, and the entire navigation is cancelled.
+
+CanActivate can restrict access, 
+- only to authenticated user
+- only to specific role
+- until user's account is activated
+
+
+
+
+
+				Observables						|				Promise
+-----------------------------------------------------------------------------------------------------------------
+Observables handle multiple values over time	|	Promises are only called once and will return a single value
+Observables are cancellable						|	Promises are not cancellable
+good candidate for working with real-time data  |
+
+
+/**
+ * Performs any type of http request. First argument is required, and can either be a url or
+ * a {@link Request} instance. If the first argument is a url, an optional {@link RequestOptions}
+ * object can be provided as the 2nd argument. The options object will be merged with the values
+ * of {@link BaseRequestOptions} before performing the request.
+ */
+request(url: string | Request, options?: RequestOptionsArgs): Observable<Response>;
+
+/**
+ * Performs a request with `get` http method.
+ */
+get(url: string, options?: RequestOptionsArgs): Observable<Response>;
+
+/**
+ * Performs a request with `post` http method.
+ */
+post(url: string, body: any, options?: RequestOptionsArgs): Observable<Response>;
+
+/**
+ * Performs a request with `put` http method.
+ */
+put(url: string, body: any, options?: RequestOptionsArgs): Observable<Response>;
+
+/**
+ * Performs a request with `delete` http method.
+ */
+delete(url: string, options?: RequestOptionsArgs): Observable<Response>;
+
+/**
+ * Performs a request with `patch` http method.
+ */
+patch(url: string, body: any, options?: RequestOptionsArgs): Observable<Response>;
+
+/**
+ * Performs a request with `head` http method.
+ */
+head(url: string, options?: RequestOptionsArgs): Observable<Response>;
+
+
+https://scotch.io/tutorials/angular-2-http-requests-with-observables

@@ -1,0 +1,28 @@
+.small-font {
+	font-size: 11px;
+}
+
+.large-font {
+	font-size: 18px;
+}
+
+.a1, .a1d {
+	height: 20px;
+	width: 20px;
+}
+
+.a1d {
+	cursor: none;
+}
+
+.w3-card-4 {
+	height: 155px;
+	width: 245px;
+	margin: 15px 10px 0px 10px;
+}
+
+.col-1-5i {
+  width: 20%;
+  text-align: center;
+  padding-left: 12px;
+}

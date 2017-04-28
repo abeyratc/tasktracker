@@ -1,0 +1,1 @@
+{"version":3,"sources":["../app/global.constants.ts"],"names":[],"mappings":";AAAa,mBAAW,GAAG;IAC1B,QAAQ,EAAE,kBAAkB;IAC5B,cAAc,EAAE,kBAAkB;CAClC,CAAA","file":"global.constants.js","sourcesContent":["export const httpHeaders = {\n\t'Accept': 'application/json',\n\t'Content-Type': 'application/json'\n}"],"sourceRoot":"."}

@@ -1,0 +1,38 @@
+table {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+th {
+    height: 30px;
+}
+
+th, td {
+    padding: 3px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
+
+textarea {
+	width: 100%;
+}
+
+.col-3-10 {
+	width: 165px;
+	border-right: 1px solid #ddd;
+}
+.col-7-10 {
+	padding-left: 10px;
+}
+
+/*.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948;  green 
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; 
+}*/

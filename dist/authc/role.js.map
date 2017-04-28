@@ -1,0 +1,1 @@
+{"version":3,"sources":["../app/authc/role.ts"],"names":[],"mappings":";AAAA;IAAA;IAGA,CAAC;IAAD,WAAC;AAAD,CAHA,AAGC,IAAA;AAHY,YAAI,OAGhB,CAAA","file":"role.js","sourcesContent":["export class Role {\n\tid: number;\n\tname: string;\n}"],"sourceRoot":".."}

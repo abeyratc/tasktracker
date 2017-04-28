@@ -1,0 +1,44 @@
+
+<!-- name: string;
+    description: string;
+    status: Status;
+    startDate: Date;
+    duration: number; -->
+
+<modal #taskModal [keyboard]="false" [backdrop]="'static'">
+    <modal-header [show-close]="false">
+        <h4 class="modal-title">New Task Entry</h4>
+    </modal-header>
+
+    <modal-body>
+     
+  <!--           <form> -->
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="form-group">
+                <label for="alterEgo">Description</label>
+                <input type="text" class="form-control" id="alterEgo">
+              </div>
+              <div class="form-group">
+          <label for="power">Task Type</label>
+          <select class="form-control" id="power" required>
+            <option *ngFor="let t of taskType" [value]="t">{{t}}</option>
+          </select>
+
+          <!-- if task type is recurring, need to input frequency 
+               else time estimation (time boxed or undeterministic, etc.)
+          -->
+
+        </div>
+<!--               <button type="submit" class="btn btn-default">Submit</button>
+            </form> -->
+
+    </modal-body>
+
+    <modal-footer>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modal.dismiss()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="modal.close()">Save</button>
+    </modal-footer>
+</modal>

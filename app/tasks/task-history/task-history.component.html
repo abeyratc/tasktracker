@@ -1,0 +1,30 @@
+<modal #taskHistoryModal [keyboard]="false" [backdrop]="'static'">
+    <modal-header [show-close]="false">
+        <h4 class="modal-title">Task History Entry</h4>
+    </modal-header>
+
+    <modal-body>
+   		<table>
+  			<tr>
+  				<th colspan="2">NOTES</th>
+  			</tr>
+  			<tr *ngFor="let n of task.notes">
+  				<td class="col-3-10">{{n.entryDate | date:'MM/dd/yyyy h:mm:a'}}</td>
+  				<td class="col-7-10">{{n.log}}</td>
+  			</tr>
+  		</table> 
+  		<br/><br/>
+
+  		<label for="noteEntry">Add New Log</label>
+  		<textarea id="noteEntry" class="form-control" required name="noteEntry" [(ngModel)]="note" #noteEntry="ngModel"></textarea>
+  		<div *ngIf="(message && noteEntry.pristine) || (noteEntry.errors && (noteEntry.dirty || noteEntry.touched))" class="alert alert-danger">
+        <div [hidden]="!noteEntry.errors.required">{{message}}</div>
+		  </div> 
+
+    </modal-body>
+
+    <modal-footer>
+        <button type="button" class="btn btn-primary" (click)="cancel()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="log()">Log</button>
+    </modal-footer>
+</modal>
